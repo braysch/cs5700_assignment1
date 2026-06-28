@@ -1,16 +1,20 @@
 import kotlin.math.sqrt
 import kotlin.math.pow
 
-class Line(
-    private val p0: Point,
-    private val p1: Point
-) : Shape(arrayOf(p0, p1), "Line") {
+class Line(p0: Point, p1: Point) : Shape(arrayOf(p0, p1), "Line") {
+
+    init {
+        validate(pointsAreDistinct(arrayOf(p0, p1)), "$name points must be distinct")
+    }
+    override fun getArea(): Double = 0.0
 
     fun getSlope(): Double {
-        return (p1.getY() - p0.getY()) / (p1.getX() - p0.getX())
+        val points = getPoints()
+        return (points[1].y - points[0].y) / (points[1].x - points[0].x)
     }
 
     fun getDistance(): Double {
-        return sqrt((p1.getX()-p0.getX()).pow(2.0) + (p1.getY()-p0.getY()).pow(2.0))
+        val points = getPoints()
+        return sqrt((points[1].x - points[0].x).pow(2.0) + (points[1].y - points[0].y).pow(2.0))
     }
 }

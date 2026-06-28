@@ -1,23 +1,16 @@
-class Point (
-    private var x: Double,
-    private var y: Double,
-) {
+class Point(x: Double, y: Double) {
+    var x: Double = x
+        private set
+    var y: Double = y
+        private set
+
     fun move(dx: Double, dy: Double) {
         x += dx
         y += dy
     }
+    fun clone(): Point = Point(x, y)
 
-    fun clone(): Point {
-        return Point(x, y)
+    fun displayDefinition() {
+        printPoints("Point", arrayOf(this))
+        }
     }
-
-    fun getX(): Double {
-        return x
-    }
-
-    fun getY(): Double {
-        return y
-    }
-
-
-}

@@ -1,4 +1,8 @@
 class Circle (
     origin: Point,
     r0: Double,
-) : Elipse(origin, r0, r0)
+) : Ellipse(origin, r0, r0, "Circle") {
+    override fun displayRadii() {
+        println("radius: $r0")
+    }
+}
