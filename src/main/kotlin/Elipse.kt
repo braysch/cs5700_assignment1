@@ -5,7 +5,7 @@ open class Elipse (
 ) : ClosedShape(arrayOf(origin), "Elipse") {
 
     init {
-        validate(r0 != 0.0 && r1 != 0.0, "$name radius cannot be zero")
+        validate(r0 > 0.0 && r1 > 0.0, "$name radius must be greater than zero")
     }
 
     override fun getArea(): Double {

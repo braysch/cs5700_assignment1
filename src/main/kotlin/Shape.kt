@@ -2,11 +2,12 @@ abstract class Shape (
     points: Array<Point>,
     val name: String
 ) {
-    private val points = points.map { it.clone() }.toTypedArray()
+    // Make a copy of points so that someone can't define a square and then move its points around so its no longer a square
+    private val points: Array<Point> = Array(points.size) { i -> points[i].clone() }
 
     init {
         validate(points.isNotEmpty(), "$name cannot be defined using zero points")
-        validate(pointsAreDistinct(points), "$name points must be distinct (area cannot be zero)")
+        validate(pointsAreDistinct(points), "$name points must be distinct")
     }
 
     fun getPoints(): Array<Point> {
@@ -21,8 +22,6 @@ abstract class Shape (
     }
 
     fun move(dx: Double, dy: Double) {
-        points.forEachIndexed { index, point ->
-            point.move(dx, dy)
-        }
+        points.forEach { point -> point.move(dx, dy) }
     }
 }
