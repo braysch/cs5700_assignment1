@@ -1,13 +1,14 @@
 fun main() {
 
-    println("Define square")
-    val squareAgain = Square(Point(34.5, 34.5),0.0)
-
     // --- Point ---
     val p = Point(1.0, 2.0)
     p.displayDefinition()
     p.move(3.0, 4.0)
     p.displayDefinition()
+
+    val squareAgain = Square(p, Double.NaN)
+    squareAgain.displayDefinition()
+    println(squareAgain.getArea())
 
     // --- Line ---
     val line = Line(Point(0.0, 0.0), Point(3.0, 4.0))

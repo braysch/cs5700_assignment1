@@ -6,7 +6,8 @@ open class Ellipse (
 ) : Shape(arrayOf(origin), name) {
 
     init {
-        validate(r0 > 0.0 && r1 > 0.0, "$name radius must be greater than zero")
+        validate(r0.isFinite() && r0 > 0.0, "$name r0 must be a finite positive number")
+        validate(r1.isFinite() && r1 > 0.0, "$name r1 must be a finite positive number")
     }
 
     override fun getArea(): Double {
