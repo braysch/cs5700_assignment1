@@ -2,8 +2,8 @@ import kotlin.math.sqrt
 import kotlin.math.pow
 
 class Line(
-    val p0: Point,
-    val p1: Point
+    private val p0: Point,
+    private val p1: Point
 ) : Shape(arrayOf(p0, p1), "Line") {
 
     fun getSlope(): Double {

@@ -1,7 +1,8 @@
 abstract class Shape (
-    private val points: Array<Point>,
+    points: Array<Point>,
     val name: String
 ) {
+    private val points = points.map { it.clone() }.toTypedArray()
 
     init {
         validate(points.isNotEmpty(), "$name cannot be defined using zero points")
