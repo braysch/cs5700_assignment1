@@ -3,7 +3,7 @@ fun validate(condition: Boolean, message: String) {
 }
 
 fun getRectangleArea(p0: Point, p1: Point): Double {
-    return Math.abs((p1.getX() - p0.getX()) * (p1.getY() - p0.getY()))
+    return kotlin.math.abs((p1.getX() - p0.getX()) * (p1.getY() - p0.getY()))
 }
 
 fun pointsAreDistinct(points: Array<Point>): Boolean {

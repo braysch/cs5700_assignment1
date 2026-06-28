@@ -1,4 +1,5 @@
 import kotlin.math.sqrt
+import kotlin.math.pow
 
 class Line(
     val p0: Point,
@@ -17,6 +18,6 @@ class Line(
     }
 
     fun getDistance(): Double {
-        return sqrt(Math.pow((p1.getX()-p0.getX()), 2.0)+Math.pow((p1.getY()-p0.getY()), 2.0))
+        return sqrt((p1.getX()-p0.getX()).pow(2.0) + (p1.getY()-p0.getY()).pow(2.0))
     }
 }

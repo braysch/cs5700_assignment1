@@ -9,7 +9,7 @@ open class Elipse (
     }
 
     override fun getArea(): Double {
-        return Math.PI * r0 * r1
+        return kotlin.math.PI * r0 * r1
     }
 
     override fun printShapeDefinition() {
