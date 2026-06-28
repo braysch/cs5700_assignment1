@@ -1,10 +1,7 @@
 open class Rectangle(
-    points: Array<Point>
-    ) : Shape(points, "Rectangle") {
-
-        init {
-            validate(points.size == 2, "$name must be defined with two points")
-        }
+    p0: Point,
+    p1: Point
+    ) : ClosedShape(arrayOf(p0, p1), "Rectangle") {
 
     override fun getArea(): Double {
         return getRectangleArea(getPoints()[0], getPoints()[1])

@@ -19,8 +19,6 @@ abstract class Shape (
         }
     }
 
-    abstract fun getArea(): Double
-
     fun move(dx: Double, dy: Double) {
         points.forEachIndexed { index, point ->
             point.move(dx, dy)

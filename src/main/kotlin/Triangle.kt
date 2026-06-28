@@ -1,11 +1,8 @@
 class Triangle (
-    points: Array<Point>
-) : Shape(points, "Triangle") {
-
-    init {
-        validate(points.size == 3, "$name must be defined with three points")
-    }
-
+    p0: Point,
+    p1: Point,
+    p2: Point
+) : ClosedShape(arrayOf(p0, p1, p2), "Triangle") {
     override fun getArea(): Double {
         return kotlin.math.abs(
             getPoints()[0].getX() * (getPoints()[1].getY() - getPoints()[2].getY()) + 

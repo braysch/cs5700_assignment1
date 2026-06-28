@@ -4,14 +4,7 @@ import kotlin.math.pow
 class Line(
     val p0: Point,
     val p1: Point
-) {
-    init {
-        validate(p0.getX() != p1.getX() || p0.getY() != p1.getY(), "Line points must be unique")
-    }
-
-    fun getPoints(): Array<Point> {
-        return arrayOf(p0, p1)
-    }
+) : Shape(arrayOf(p0, p1), "Line") {
 
     fun getSlope(): Double {
         return (p1.getY() - p0.getY()) / (p1.getX() - p0.getX())

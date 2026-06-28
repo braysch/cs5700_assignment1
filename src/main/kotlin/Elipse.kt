@@ -1,8 +1,8 @@
 open class Elipse (
-    points: Array<Point>,
+    origin: Point,
     private val r0: Double,
     private val r1: Double
-) : Shape(points, "Elipse") {
+) : ClosedShape(arrayOf(origin), "Elipse") {
 
     init {
         validate(r0 != 0.0 && r1 != 0.0, "$name radius cannot be zero")

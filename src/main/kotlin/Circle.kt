@@ -1,5 +1,5 @@
 class Circle (
-    points: Array<Point>,
+    origin: Point,
     private val r0: Double,
-) : Elipse(points, r0, r0) {
+) : Elipse(origin, r0, r0) {
 }

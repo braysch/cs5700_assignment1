@@ -14,7 +14,7 @@ fun main() {
     println("SLOPE:")
     println(line.getSlope())
 
-    val rectangle = Rectangle(arrayOf(p0, p1))
+    val rectangle = Rectangle(p0, p1)
     println(rectangle.getArea())
     rectangle.printShapeDefinition()
     rectangle.move(34.6, 28.5)
@@ -28,14 +28,14 @@ fun main() {
 
     val squareagain = Square(p0, 234.5)
 
-    val triangle = Triangle(arrayOf(Point(0.0,0.0), Point(1.0,1.0), Point(0.0, 1.0)))
+    val triangle = Triangle(Point(0.0,0.0), Point(1.0,1.0), Point(0.0, 1.0))
     println(triangle.getArea())
 
-    val elipse = Elipse(arrayOf(p0), 5.5, 2.0)
+    val elipse = Elipse(p0, 5.5, 2.0)
     println(elipse.getArea())
     elipse.move(34.5, 23.6)
     elipse.printShapeDefinition()
 
-    val circle = Circle(arrayOf(p0), 3.0)
+    val circle = Circle(p0, 3.0)
     circle.printShapeDefinition()
 }
