@@ -1,7 +1,7 @@
 open class Ellipse (
     origin: Point,
     protected val r0: Double,
-    protected val r1: Double,
+    private val r1: Double,
     name: String = "Ellipse"
 ) : Shape(arrayOf(origin), name) {
 
@@ -22,6 +22,10 @@ open class Ellipse (
     override fun displayDefinition() {
         super.displayDefinition()
         displayRadii()
+    }
+
+    open fun getRadii(): Array<Double> {
+        return arrayOf(r0, r1)
     }
 
 }

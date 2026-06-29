@@ -15,7 +15,7 @@ fun main() {
     line.displayDefinition()
     println("Line area: ${line.getArea()}")
     println("Line slope: ${line.getSlope()}")
-    println("Line distance: ${line.getDistance()}")
+    println("Line distance: ${line.getLength()}")
     line.move(1.0, 1.0)
     line.getArea()
     line.displayDefinition()

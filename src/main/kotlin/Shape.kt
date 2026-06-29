@@ -1,4 +1,4 @@
-abstract class Shape(points: Array<Point>, val name: String) {
+abstract class Shape(points: Array<Point>, protected val name: String) {
     private val points: Array<Point>
 
     init {
@@ -8,9 +8,9 @@ abstract class Shape(points: Array<Point>, val name: String) {
 
     abstract fun getArea(): Double
 
-    open fun getPoints(): Array<Point> = Array(points.size) { i -> points[i].clone() }
+    fun getPoints(): Array<Point> = Array(points.size) { i -> points[i].clone() }
 
-    open fun move(dx: Double, dy: Double) {
+    fun move(dx: Double, dy: Double) {
         points.forEach { it.move(dx, dy) }
     }
 

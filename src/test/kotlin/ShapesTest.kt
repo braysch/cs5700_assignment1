@@ -157,27 +157,27 @@ class LineTest {
     }
 
     @Test
-    fun getDistanceForThreeFourFiveTriangle() {
+    fun getLengthForThreeFourFiveTriangle() {
         val line = Line(Point(0.0, 0.0), Point(3.0, 4.0))
-        assertEquals(5.0, line.getDistance(), 1e-9)
+        assertEquals(5.0, line.getLength(), 1e-9)
     }
 
     @Test
-    fun getDistanceForHorizontalLine() {
+    fun getLengthForHorizontalLine() {
         val line = Line(Point(1.0, 3.0), Point(7.0, 3.0))
-        assertEquals(6.0, line.getDistance(), 1e-9)
+        assertEquals(6.0, line.getLength(), 1e-9)
     }
 
     @Test
-    fun getDistanceForVerticalLine() {
+    fun getLengthForVerticalLine() {
         val line = Line(Point(4.0, 0.0), Point(4.0, 5.0))
-        assertEquals(5.0, line.getDistance(), 1e-9)
+        assertEquals(5.0, line.getLength(), 1e-9)
     }
 
     @Test
-    fun getDistanceIsSymmetric() {
-        val d1 = Line(Point(0.0, 0.0), Point(3.0, 4.0)).getDistance()
-        val d2 = Line(Point(3.0, 4.0), Point(0.0, 0.0)).getDistance()
+    fun getLengthIsSymmetric() {
+        val d1 = Line(Point(0.0, 0.0), Point(3.0, 4.0)).getLength()
+        val d2 = Line(Point(3.0, 4.0), Point(0.0, 0.0)).getLength()
         assertEquals(d1, d2, 1e-9)
     }
 
@@ -193,9 +193,9 @@ class LineTest {
     @Test
     fun movePreservesLength() {
         val line = Line(Point(0.0, 0.0), Point(3.0, 4.0))
-        val before = line.getDistance()
+        val before = line.getLength()
         line.move(10.0, -5.0)
-        assertEquals(before, line.getDistance(), 1e-9)
+        assertEquals(before, line.getLength(), 1e-9)
     }
 
     @Test
@@ -437,6 +437,13 @@ class EllipseTest {
         assertEquals(1.0, pts[0].x)
         assertEquals(2.0, pts[0].y)
     }
+
+    @Test
+    fun getRadiiReturnsBothRadii() {
+        val radii = Ellipse(Point(0.0, 0.0), 3.0, 4.0).getRadii()
+        assertEquals(3.0, radii[0], 1e-9)
+        assertEquals(4.0, radii[1], 1e-9)
+    }
 }
 
 // ─── Circle ──────────────────────────────────────────────────────────────────
@@ -494,6 +501,13 @@ class CircleTest {
     @Test
     fun circleIsAnEllipse() {
         assertTrue(Circle(Point(0.0, 0.0), 5.0) is Ellipse)
+    }
+
+    @Test
+    fun getRadiiReturnsSingleRadius() {
+        val radii = Circle(Point(0.0, 0.0), 5.0).getRadii()
+        assertEquals(1, radii.size)
+        assertEquals(5.0, radii[0], 1e-9)
     }
 }
 

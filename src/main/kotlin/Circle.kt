@@ -5,4 +5,8 @@ class Circle (
     override fun displayRadii() {
         println("radius: $r0")
     }
+
+    override fun getRadii(): Array<Double> {
+        return arrayOf(r0)
+    }
 }
